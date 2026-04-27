@@ -83,7 +83,7 @@ export default function Hero() {
           transition={{ delay: 0.6 }}
         >
           <a href="/chat" className="px-5 py-2.5 rounded bg-white text-black font-mono text-sm font-semibold hover:bg-zinc-200 transition-colors">
-            Chat with my AI
+            Chat with Begim<span className="text-blue-400">AI</span> →
           </a>
           <a href="/resume" className="px-5 py-2.5 rounded border border-zinc-600 text-zinc-300 font-mono text-sm hover:border-zinc-400 hover:text-white transition-colors">
             Resume
