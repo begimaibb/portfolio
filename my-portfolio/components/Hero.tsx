@@ -83,12 +83,15 @@ export default function Hero() {
           transition={{ delay: 0.6 }}
         >
           <a href="/chat" className="px-5 py-2.5 rounded bg-white text-black font-mono text-sm font-semibold hover:bg-zinc-200 transition-colors">
-            Chat with Begim<span className="text-blue-400">AI</span> →
+            Chat with Begim<span className="text-blue-600">AI</span>
           </a>
           <a href="/resume" className="px-5 py-2.5 rounded border border-zinc-600 text-zinc-300 font-mono text-sm hover:border-zinc-400 hover:text-white transition-colors">
             Resume
           </a>
-          <a href="https://github.com/YOUR_GITHUB" target="_blank" className="px-5 py-2.5 rounded border border-zinc-600 text-zinc-300 font-mono text-sm hover:border-zinc-400 hover:text-white transition-colors">
+          <a href="/projects" className="px-5 py-2.5 rounded border border-zinc-600 text-zinc-300 font-mono text-sm hover:border-zinc-400 hover:text-white transition-colors">
+            Projects
+          </a>
+          <a href="https://github.com/begimaibb" target="_blank" className="px-5 py-2.5 rounded border border-zinc-600 text-zinc-300 font-mono text-sm hover:border-zinc-400 hover:text-white transition-colors">
             GitHub
           </a>
           <a href="mailto:begimai.bolotbekova.b@gmail.com" className="px-5 py-2.5 rounded border border-zinc-600 text-zinc-300 font-mono text-sm hover:border-zinc-400 hover:text-white transition-colors">

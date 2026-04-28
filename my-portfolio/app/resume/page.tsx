@@ -7,7 +7,7 @@ export default function ResumePage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <p className="text-zinc-500 font-mono text-sm mb-1">
-              begimai bolotbekova
+              BB
             </p>
             <h1 className="text-3xl font-bold text-white font-mono">
               Resume

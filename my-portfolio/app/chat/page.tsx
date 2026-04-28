@@ -92,7 +92,7 @@ export default function ChatPage() {
         {loading && (
           <div className="flex justify-start">
             <div className="bg-zinc-900 border border-zinc-800 px-4 py-3 rounded-lg">
-              <p className="text-blue-400 text-xs font-mono mb-1">Begimai AI</p>
+              <p className="text-blue-400 text-xs font-mono mb-1">BegimAI</p>
               <div className="flex gap-1">
                 <span className="w-2 h-2 bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                 <span className="w-2 h-2 bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
