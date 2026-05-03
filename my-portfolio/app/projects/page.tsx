@@ -4,6 +4,22 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Diabetes Risk Prediction",
+    date: "Jan 2024",
+    description:
+      "Machine learning project using CDC BRFSS survey data to predict diabetes risk. Deployed as a live Streamlit web application for real-time risk assessment.",
+    bullets: [
+      "Built XGBoost classifier on 22 health & demographic features from CDC BRFSS data",
+      "Achieved 80% accuracy with hyperparameter tuning via Optuna",
+      "Handled class imbalance and deployed live app on Streamlit",
+    ],
+    tags: ["Python", "XGBoost", "Optuna", "Streamlit", "Scikit-learn", "CDC BRFSS"],
+    color: "red",
+    link: "https://diabetes-risk-prediction-bfrss.streamlit.app/",
+    linkLabel: "Live App",
+    github: "https://github.com/begimaibb/diabetes-risk-prediction",
+  },
+  {
     title: "Housing Price Prediction",
     date: "Jun 2024",
     description:
@@ -17,6 +33,7 @@ const projects = [
     color: "blue",
     link: "https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=.s2CQy/record?r1=1&h1=0#XXX",
     linkLabel: "View Thesis",
+    github: null,
   },
   {
     title: "Bike-Sharing Route Optimization",
@@ -32,6 +49,7 @@ const projects = [
     color: "green",
     link: null,
     linkLabel: null,
+    github: null,
   },
   {
     title: "CRM Data Migration & Analytics",
@@ -47,6 +65,7 @@ const projects = [
     color: "purple",
     link: null,
     linkLabel: null,
+    github: null,
   },
   {
     title: "Retail A/B Testing & Merchandising Analysis",
@@ -62,10 +81,12 @@ const projects = [
     color: "orange",
     link: null,
     linkLabel: null,
+    github: null,
   },
 ];
 
 const colorMap: Record<string, string> = {
+  red: "bg-red-400",
   blue: "bg-blue-400",
   green: "bg-green-400",
   purple: "bg-purple-400",
@@ -73,6 +94,7 @@ const colorMap: Record<string, string> = {
 };
 
 const borderMap: Record<string, string> = {
+  red: "hover:border-red-800",
   blue: "hover:border-blue-800",
   green: "hover:border-green-800",
   purple: "hover:border-purple-800",
@@ -142,16 +164,28 @@ export default function ProjectsPage() {
                 ))}
               </div>
 
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-3 py-1.5 text-xs font-mono rounded border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-white transition-colors"
-                >
-                  {project.linkLabel} →
-                </a>
-              )}
+              <div className="flex gap-3">
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-3 py-1.5 text-xs font-mono rounded border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-white transition-colors"
+                  >
+                    {project.linkLabel} →
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-3 py-1.5 text-xs font-mono rounded border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-white transition-colors"
+                  >
+                    GitHub →
+                  </a>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
