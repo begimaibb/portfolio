@@ -4,8 +4,43 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Spotify Playlist Continuation",
+    date: "Dec 2025",
+    badge: null,
+    description:
+      "Recommendation system that predicts and continues Spotify playlists based on listening patterns and audio features. Course project in progress.",
+    bullets: [
+      "Building on Spotify Million Playlist Dataset",
+      "Exploring collaborative filtering and content-based approaches",
+      "Target: recommend next tracks given a partial playlist",
+    ],
+    tags: ["Python", "Recommendation Systems", "Collaborative Filtering", "Spotify API"],
+    color: "green",
+    link: null,
+    linkLabel: null,
+    github: "https://github.com/begimaibb/spotify-playlist-continuation",
+  },
+  {
+    title: "Housing Price Prediction in Taiwan",
+    date: "Aug 2026",
+    badge: "MS Thesis",
+    description:
+      "MS thesis project predicting housing prices in Taiwan using multiple machine learning models. Conducted comparative evaluation across traditional and advanced ML techniques.",
+    bullets: [
+      "Compared MLR, Random Forest, and XGBoost across 32 property features",
+      "Achieved R² of 0.77 with best performing model",
+      "Built in R with full data preprocessing and feature engineering pipeline",
+    ],
+    tags: ["R", "XGBoost", "Random Forest", "MLR", "ggplot2", "caret"],
+    color: "blue",
+    link: "https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=.s2CQy/record?r1=1&h1=0#XXX",
+    linkLabel: "View Thesis",
+    github: "https://github.com/begimaibb/housing-price-prediction-taiwan",
+  },
+  {
     title: "Diabetes Risk Prediction",
     date: "Jan 2024",
+    badge: null,
     description:
       "Machine learning project using CDC BRFSS survey data to predict diabetes risk. Deployed as a live Streamlit web application for real-time risk assessment.",
     bullets: [
@@ -13,92 +48,29 @@ const projects = [
       "Achieved 80% accuracy with hyperparameter tuning via Optuna",
       "Handled class imbalance and deployed live app on Streamlit",
     ],
-    tags: ["Python", "XGBoost", "Optuna", "Streamlit", "Scikit-learn", "CDC BRFSS"],
+    tags: ["Python", "XGBoost", "Optuna", "Streamlit", "Scikit-learn"],
     color: "red",
     link: "https://diabetes-risk-prediction-bfrss.streamlit.app/",
     linkLabel: "Live App",
     github: "https://github.com/begimaibb/diabetes-risk-prediction",
   },
-  {
-    title: "Housing Price Prediction",
-    date: "Jun 2024",
-    description:
-      "MBA thesis project predicting housing prices in Taiwan using multiple machine learning models. Conducted comparative evaluation to identify the best performing approach.",
-    bullets: [
-      "Compared MLR, Random Forest, and XGBoost models",
-      "Achieved R² of 0.77 with best performing model",
-      "Applied feature engineering and model evaluation techniques",
-    ],
-    tags: ["Python", "XGBoost", "Random Forest", "Scikit-learn", "Statistics"],
-    color: "blue",
-    link: "https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=.s2CQy/record?r1=1&h1=0#XXX",
-    linkLabel: "View Thesis",
-    github: null,
-  },
-  {
-    title: "Bike-Sharing Route Optimization",
-    date: "Feb–Jun 2023",
-    description:
-      "Engineered a route optimization framework for bike-sharing systems in Taipei using graph theory and shortest path algorithms.",
-    bullets: [
-      "Implemented Dijkstra's Algorithm for route optimization",
-      "Achieved 20% improvement in route efficiency",
-      "Applied Graph Theory concepts in Python",
-    ],
-    tags: ["Python", "Graph Theory", "Dijkstra's Algorithm", "Optimization"],
-    color: "green",
-    link: null,
-    linkLabel: null,
-    github: null,
-  },
-  {
-    title: "CRM Data Migration & Analytics",
-    date: "Aug 2023–Aug 2024",
-    description:
-      "Led end-to-end data migration to a new CRM at Faria Education Group, serving 100+ international schools with zero data loss.",
-    bullets: [
-      "Reduced data retrieval time by 88% (4 hours to 30 minutes)",
-      "Ensured 100% data fidelity across high-volume upload cycles",
-      "Managed academic reporting data lifecycle for 100+ schools",
-    ],
-    tags: ["SQL", "Data Migration", "CRM", "Data Quality"],
-    color: "purple",
-    link: null,
-    linkLabel: null,
-    github: null,
-  },
-  {
-    title: "Retail A/B Testing & Merchandising Analysis",
-    date: "2019–2022",
-    description:
-      "Designed and executed a large-scale A/B analysis across 200 retail locations at Coca-Cola to evaluate merchandising strategies.",
-    bullets: [
-      "Identified variables driving 50% increase in total brand sales",
-      "Achieved 100–200% sales lift in targeted stores",
-      "Led RED Project — highest country RED score since 2016 launch",
-    ],
-    tags: ["Python", "SQL", "A/B Testing", "Statistical Analysis", "Tableau"],
-    color: "orange",
-    link: null,
-    linkLabel: null,
-    github: null,
-  },
 ];
 
 const colorMap: Record<string, string> = {
-  red: "bg-red-400",
-  blue: "bg-blue-400",
   green: "bg-green-400",
-  purple: "bg-purple-400",
-  orange: "bg-orange-400",
+  blue: "bg-blue-400",
+  red: "bg-red-400",
 };
 
 const borderMap: Record<string, string> = {
-  red: "hover:border-red-800",
-  blue: "hover:border-blue-800",
   green: "hover:border-green-800",
-  purple: "hover:border-purple-800",
-  orange: "hover:border-orange-800",
+  blue: "hover:border-blue-800",
+  red: "hover:border-red-800",
+};
+
+const badgeMap: Record<string, string> = {
+  "MS Thesis": "border-blue-500/40 text-blue-400 bg-blue-500/10",
+  "In Progress": "border-green-500/40 text-green-400 bg-green-500/10",
 };
 
 export default function ProjectsPage() {
@@ -111,7 +83,7 @@ export default function ProjectsPage() {
             <p className="text-zinc-500 font-mono text-sm mb-1">BB</p>
             <h1 className="text-4xl font-bold text-white font-mono">Projects</h1>
             <p className="text-zinc-400 font-mono text-sm mt-2">
-              Data science work across industry and academia
+              Personal and academic data science work
             </p>
           </div>
           <a
@@ -132,9 +104,16 @@ export default function ProjectsPage() {
               className={`border border-zinc-800 bg-zinc-900/30 rounded-lg p-6 transition-colors ${borderMap[project.color]}`}
             >
               <div className="flex items-start justify-between mb-3">
-                <h2 className="text-xl font-bold text-white font-mono">
-                  {project.title}
-                </h2>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <h2 className="text-xl font-bold text-white font-mono">
+                    {project.title}
+                  </h2>
+                  {project.badge && (
+                    <span className={`px-2 py-0.5 text-xs font-mono rounded border ${badgeMap[project.badge]}`}>
+                      {project.badge}
+                    </span>
+                  )}
+                </div>
                 <span className="text-zinc-500 font-mono text-sm shrink-0 ml-4">
                   {project.date}
                 </span>
