@@ -54,13 +54,13 @@ Experience:
    - Optimized marketing budgets using Python and SQL
 
 Key Projects:
-1. Spotify Playlist Continuation (Dec 2025, In Progress)
+1. Spotify Playlist Continuation (Jun 2025)
    - Building a recommendation system that predicts and continues Spotify playlists
    - Using the Spotify Million Playlist Dataset
    - Exploring collaborative filtering and content-based approaches
    - GitHub: https://github.com/begimaibb/spotify-playlist-continuation
 
-2. Housing Price Prediction in Taiwan (Aug 2026, MS Thesis)
+2. Housing Price Prediction in Taiwan (Jun 2024, MBA Thesis)
    - Compared MLR, Random Forest, and XGBoost across 32 property features
    - Achieved R² of 0.77 with the best performing model
    - Built in R with full data preprocessing and feature engineering pipeline

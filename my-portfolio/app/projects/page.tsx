@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "Spotify Playlist Continuation",
-    date: "Dec 2025",
+    date: "Apr 2025",
     badge: null,
     description:
       "Recommendation system that predicts and continues Spotify playlists based on listening patterns and audio features. Course project in progress.",
@@ -22,8 +22,8 @@ const projects = [
   },
   {
     title: "Housing Price Prediction in Taiwan",
-    date: "Aug 2026",
-    badge: "MS Thesis",
+    date: "Jun 2024",
+    badge: "MBA Thesis",
     description:
       "MS thesis project predicting housing prices in Taiwan using multiple machine learning models. Conducted comparative evaluation across traditional and advanced ML techniques.",
     bullets: [
