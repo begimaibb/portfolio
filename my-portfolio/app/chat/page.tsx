@@ -11,7 +11,7 @@ export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! I'm Begimai's AI assistant. Ask me anything about her experience, skills, or projects!",
+      content: "Hi! I'm BegimAI. Ask me anything about my experience, skills, or projects!",
     },
   ]);
   const [input, setInput] = useState("");
