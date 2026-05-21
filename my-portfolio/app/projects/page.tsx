@@ -4,11 +4,28 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Mitigating Model Inversion Attacks in Healthcare ML",
+    date: "Dec 2025",
+    badge: "AI Security",
+    description:
+      "End-to-end privacy-preserving ML framework that protects patient data from model inversion attacks using Differential Privacy. Built for healthcare deployment with HIPAA and GDPR compliance in mind.",
+    bullets: [
+      "Simulated gradient-based MIA across 308 diabetic patients — DP reduced attack effectiveness by 42.7% on average (best case: +571.4%)",
+      "Maintained 76% classification accuracy while substantially reducing privacy leakage",
+      "Deployed via Flask REST API and Docker container with CI/CD pipeline and 6 passing unit tests",
+    ],
+    tags: ["Python", "Differential Privacy", "Flask", "Docker", "Neo4j", "Scikit-learn", "Healthcare ML"],
+    color: "cyan",
+    link: null,
+    linkLabel: null,
+    github: "https://github.com/begimaibb/healthcare-dp-mia",
+  },
+  {
     title: "Spotify Playlist Continuation",
     date: "Apr 2025",
-    badge: null,
+    badge: "In Progress",
     description:
-      "Recommendation system that predicts and continues Spotify playlists based on listening patterns and audio features. Course project in progress.",
+      "Recommendation system that predicts and continues Spotify playlists based on listening patterns and audio features.",
     bullets: [
       "Building on Spotify Million Playlist Dataset",
       "Exploring collaborative filtering and content-based approaches",
@@ -25,7 +42,7 @@ const projects = [
     date: "Jun 2024",
     badge: "MBA Thesis",
     description:
-      "MS thesis project predicting housing prices in Taiwan using multiple machine learning models. Conducted comparative evaluation across traditional and advanced ML techniques.",
+      "MBA thesis predicting housing prices in Taiwan using multiple machine learning models. Comparative evaluation across traditional and advanced ML techniques.",
     bullets: [
       "Compared MLR, Random Forest, and XGBoost across 32 property features",
       "Achieved R² of 0.77 with best performing model",
@@ -57,20 +74,23 @@ const projects = [
 ];
 
 const colorMap: Record<string, string> = {
+  cyan: "bg-cyan-400",
   green: "bg-green-400",
   blue: "bg-blue-400",
   red: "bg-red-400",
 };
 
 const borderMap: Record<string, string> = {
+  cyan: "hover:border-cyan-800",
   green: "hover:border-green-800",
   blue: "hover:border-blue-800",
   red: "hover:border-red-800",
 };
 
 const badgeMap: Record<string, string> = {
-  "MS Thesis": "border-blue-500/40 text-blue-400 bg-blue-500/10",
+  "AI Security": "border-cyan-500/40 text-cyan-400 bg-cyan-500/10",
   "In Progress": "border-green-500/40 text-green-400 bg-green-500/10",
+  "MBA Thesis": "border-blue-500/40 text-blue-400 bg-blue-500/10",
 };
 
 export default function ProjectsPage() {
