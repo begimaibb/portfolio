@@ -50,7 +50,7 @@ const projects = [
     ],
     tags: ["R", "XGBoost", "Random Forest", "MLR", "ggplot2", "caret"],
     color: "blue",
-    link: "https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=.s2CQy/record?r1=1&h1=0#XXX",
+    link: "https://hdl.handle.net/11296/5ugse9",
     linkLabel: "View Thesis",
     github: "https://github.com/begimaibb/housing-price-prediction-taiwan",
   },
