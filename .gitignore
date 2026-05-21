@@ -142,4 +142,5 @@ vite.config.ts.timestamp-*
 .env.local
 venv/
 __pycache__/
-*.pyc
+*.pyc.DS_Store
+**/.DS_Store
