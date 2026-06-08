@@ -21,40 +21,6 @@ const projects = [
     github: "https://github.com/begimaibb/healthcare-dp-mia",
   },
   {
-    title: "Spotify Playlist Continuation",
-    date: "Apr 2025",
-    badge: "In Progress",
-    description:
-      "Recommendation system that predicts and continues Spotify playlists based on listening patterns and audio features.",
-    bullets: [
-      "Building on Spotify Million Playlist Dataset",
-      "Exploring collaborative filtering and content-based approaches",
-      "Target: recommend next tracks given a partial playlist",
-    ],
-    tags: ["Python", "Recommendation Systems", "Collaborative Filtering", "Spotify API"],
-    color: "green",
-    link: null,
-    linkLabel: null,
-    github: "https://github.com/begimaibb/spotify-playlist-continuation",
-  },
-  {
-    title: "Housing Price Prediction in Taiwan",
-    date: "Jun 2024",
-    badge: "MBA Thesis",
-    description:
-      "MBA thesis predicting housing prices in Taiwan using multiple machine learning models. Comparative evaluation across traditional and advanced ML techniques.",
-    bullets: [
-      "Compared MLR, Random Forest, and XGBoost across 32 property features",
-      "Achieved R² of 0.77 with best performing model",
-      "Built in R with full data preprocessing and feature engineering pipeline",
-    ],
-    tags: ["R", "XGBoost", "Random Forest", "MLR", "ggplot2", "caret"],
-    color: "blue",
-    link: "https://hdl.handle.net/11296/5ugse9",
-    linkLabel: "View Thesis",
-    github: "https://github.com/begimaibb/housing-price-prediction-taiwan",
-  },
-  {
     title: "Diabetes Risk Prediction",
     date: "Jan 2024",
     badge: null,
