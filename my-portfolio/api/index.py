@@ -67,26 +67,20 @@ Key Projects:
    - Ensures HIPAA and GDPR compliance
    - GitHub: https://github.com/begimaibb/healthcare-dp-mia
 
-2. Spotify Playlist Continuation (Apr 2025, In Progress)
-   - Recommendation system predicting and continuing Spotify playlists
-   - Using the Spotify Million Playlist Dataset
-   - Exploring collaborative filtering and content-based approaches
-   - GitHub: https://github.com/begimaibb/spotify-playlist-continuation
-
-3. Housing Price Prediction in Taiwan (Jun 2024, MBA Thesis)
+2. Housing Price Prediction in Taiwan (Jun 2024, MBA Thesis)
    - Compared MLR, Random Forest, and XGBoost across 32 property features
    - Achieved R² of 0.77 with the best performing model
    - Built in R with full data preprocessing and feature engineering pipeline
    - GitHub: https://github.com/begimaibb/housing-price-prediction-taiwan
 
-4. Diabetes Risk Prediction (Jan 2024)
+3. Diabetes Risk Prediction (Jan 2024)
    - Built XGBoost classifier on 22 health and demographic features from CDC BRFSS data
    - Achieved 80% accuracy with hyperparameter tuning via Optuna
    - Deployed as a live Streamlit web app: https://diabetes-risk-prediction-bfrss.streamlit.app/
    - GitHub: https://github.com/begimaibb/diabetes-risk-prediction
 
 Education:
-- MS in Data Science, Golden Gate University, San Francisco (GPA 3.88, graduating Aug 2026)
+- MS in Data Science, Golden Gate University, San Francisco (GPA 3.88, graduating Dec 2026)
   Coursework: Applied Data Science, Statistics and Probability, Managing Data Structures, AI for Data Security
 - MBA, National Taipei University of Technology, Taipei (GPA 4.0, Jun 2024)
   Coursework: Big Data Analytics for Business Intelligence, Excel VBA Programming
