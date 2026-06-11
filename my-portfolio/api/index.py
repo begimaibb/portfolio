@@ -9,10 +9,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Initialize the Gemini Client
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 app = FastAPI()
 
+# Configure CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -110,24 +112,38 @@ class ChatRequest(BaseModel):
 
 @app.post("/api/chat")
 async def chat(request: ChatRequest):
-    history = []
-    for msg in request.messages[:-1]:
-        history.append(
-            types.Content(
-                role="user" if msg.role == "user" else "model",
-                parts=[types.Part(text=msg.content)]
+    try:
+        # Reconstruct chat history (excluding the very last message)
+        formatted_history = []
+        for msg in request.messages[:-1]:
+            role = "user" if msg.role == "user" else "model"
+            formatted_history.append(
+                types.Content(
+                    role=role,
+                    parts=[types.Part.from_text(text=msg.content)]
+                )
             )
+
+        # Initialize the managed chat session
+        chat_session = client.chats.create(
+            model="gemini-2.5-flash",
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_PROMPT,
+                temperature=0.7,
+            ),
+            history=formatted_history
         )
 
-    last_message = request.messages[-1].content
+        # Send the latest user prompt
+        last_message = request.messages[-1].content
+        response = chat_session.send_message(last_message)
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        config=types.GenerateContentConfig(system_instruction=SYSTEM_PROMPT),
-        contents=history + [types.Content(role="user", parts=[types.Part(text=last_message)])]
-    )
+        return {"message": response.text}
 
-    return {"message": response.text}
+    except Exception as e:
+        # Check your terminal/server logs if errors persist
+        print(f"Chat API Exception raised: {str(e)}")
+        return {"message": "Sorry, something went wrong. Please try again."}
 
 @app.get("/")
 async def root():
