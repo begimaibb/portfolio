@@ -7,14 +7,15 @@ from google.genai import types
 import os
 from dotenv import load_dotenv
 
+# Clean fallback loading for local development and production environment variables
 load_dotenv()
 
-# Initialize the Gemini Client
+# Initialize the modern Gemini SDK Client
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 app = FastAPI()
 
-# Configure CORS
+# Configure CORS for local testing and your live production domain
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -113,7 +114,7 @@ class ChatRequest(BaseModel):
 @app.post("/api/chat")
 async def chat(request: ChatRequest):
     try:
-        # Reconstruct chat history (excluding the very last message)
+        # Structured history builder required by the google-genai SDK
         formatted_history = []
         for msg in request.messages[:-1]:
             role = "user" if msg.role == "user" else "model"
@@ -124,7 +125,7 @@ async def chat(request: ChatRequest):
                 )
             )
 
-        # Initialize the managed chat session
+        # Leverage native chat session logic with system_instruction injection
         chat_session = client.chats.create(
             model="gemini-2.5-flash",
             config=types.GenerateContentConfig(
@@ -134,17 +135,18 @@ async def chat(request: ChatRequest):
             history=formatted_history
         )
 
-        # Send the latest user prompt
+        # Transmit the current message down the line
         last_message = request.messages[-1].content
         response = chat_session.send_message(last_message)
 
         return {"message": response.text}
 
     except Exception as e:
-        # Check your terminal/server logs if errors persist
+        # Logs the real culprit error in your Render logs if things break again later
         print(f"Chat API Exception raised: {str(e)}")
         return {"message": "Sorry, something went wrong. Please try again."}
 
-@app.get("/")
+# Handles both GET and HEAD methods for seamless deployment platform health checks
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
     return {"status": "Begimai's portfolio API is running"}
